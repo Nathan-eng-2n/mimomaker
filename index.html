@@ -1,116 +1,208 @@
-<!DOCTYPE html><html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mimo Maker - Kits Criativos</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
+      font-family: 'Fredoka', sans-serif;
       background-color: #12191f;
       color: #f2f2f2;
-    }header {
-  background-color: #12191f;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+    }
 
-.logo {
-  display: flex;
-  align-items: center;
-}
+    header {
+      background-color: #12191f;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
 
-.logo img {
-  height: 60px;
-  margin-right: 15px;
-}
+    .logo {
+      display: flex;
+      align-items: center;
+    }
 
-.logo-text {
-  font-size: 24px;
-  font-weight: bold;
-  color: #f2f2f2;
-}
+    .logo img {
+      height: 120px;
+      margin-right: 25px;
+    }
 
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #f2f2f2;
-  font-weight: 500;
-}
+    .logo-text {
+      font-size: 48px;
+      font-weight: 700;
+      color: #f2f2f2;
+    }
 
-.hero {
-  background: linear-gradient(45deg, #fbad50, #e95950);
-  padding: 60px 20px;
-  text-align: center;
-}
+    nav a {
+      margin-left: 25px;
+      text-decoration: none;
+      color: #f2f2f2;
+      font-weight: 600;
+      font-size: 18px;
+      transition: color 0.3s;
+    }
 
-.hero h1 {
-  font-size: 40px;
-  color: #fff;
-}
+    nav a:hover {
+      color: #fbad50;
+    }
 
-.hero p {
-  font-size: 18px;
-  margin-top: 10px;
-}
+    .hero {
+      background: linear-gradient(45deg, #fbad50, #e95950);
+      padding: 80px 20px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
 
-.kits {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 40px;
-  background-color: #1e2933;
-}
+    .hero h1 {
+      font-size: 54px;
+      color: #fff;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
+      animation: floatText 3s ease-in-out infinite;
+    }
 
-.kit {
-  background-color: #fff;
-  color: #000;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  text-align: center;
-  padding-bottom: 20px;
-}
+    .hero p {
+      font-size: 22px;
+      margin-top: 15px;
+      position: relative;
+      z-index: 2;
+      animation: glow 2s ease-in-out infinite alternate;
+    }
 
-.kit img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
+    @keyframes floatText {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
 
-.kit h3 {
-  margin: 15px 0 10px;
-}
+    @keyframes glow {
+      0% { text-shadow: 0 0 5px #fff, 0 0 10px #fbad50, 0 0 15px #e95950; }
+      100% { text-shadow: 0 0 10px #fff, 0 0 20px #fbad50, 0 0 30px #e95950; }
+    }
 
-.kit p {
-  font-size: 14px;
-  padding: 0 15px;
-}
+    .kits {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      padding: 50px 40px;
+      background-color: #1e2933;
+    }
 
-.whatsapp-button {
-  background-color: #25D366;
-  color: white;
-  padding: 15px 25px;
-  text-decoration: none;
-  font-size: 18px;
-  border-radius: 30px;
-  display: inline-block;
-  margin: 30px auto;
-  text-align: center;
-}
+    .kit {
+      background-color: #fff;
+      color: #000;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.3);
+      text-align: center;
+      transition: transform 0.3s;
+    }
 
-footer {
-  background-color: #12191f;
-  color: #ccc;
-  text-align: center;
-  padding: 20px;
-}
+    .kit:hover {
+      transform: scale(1.03);
+    }
 
+    .kit img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .kit h3 {
+      margin: 20px 0 10px;
+      font-size: 22px;
+      font-weight: 600;
+    }
+
+    .kit p {
+      font-size: 16px;
+      padding: 0 20px;
+    }
+
+    .whatsapp-button {
+      background-color: #25D366;
+      color: white;
+      padding: 18px 35px;
+      text-decoration: none;
+      font-size: 20px;
+      border-radius: 30px;
+      display: inline-block;
+      margin: 20px auto 10px;
+      text-align: center;
+      transition: background-color 0.3s;
+    }
+
+    .whatsapp-button:hover {
+      background-color: #1ebe5d;
+    }
+
+    .instagram-button {
+      background: linear-gradient(45deg, #fccc63, #fbad50, #e95950, #bc2a8d);
+      color: white;
+      padding: 18px 35px;
+      text-decoration: none;
+      font-size: 20px;
+      border-radius: 30px;
+      display: inline-block;
+      margin: 10px auto;
+      text-align: center;
+    }
+
+    .social-section {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .cta-text {
+      font-size: 18px;
+      margin-top: 10px;
+      color: #fbad50;
+      font-weight: bold;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 15px 20px;
+      font-size: 16px;
+      border-radius: 30px;
+      text-decoration: none;
+      z-index: 1000;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      animation: pulse 2s infinite;
+    }
+
+    .floating-button:hover {
+      background-color: #1ebe5d;
+    }
+
+    footer {
+      background-color: #12191f;
+      color: #ccc;
+      text-align: center;
+      padding: 30px;
+      font-size: 15px;
+    }
   </style>
 </head>
-<body><header>
+<body>
+
+<header>
   <div class="logo">
     <img src="https://i.ibb.co/SDBVBNrc/5a3e1554-dbef-4a74-8959-fc61f409ac4d.jpg" alt="Logo Mimo Maker">
     <div class="logo-text">Mimo Maker</div>
@@ -119,10 +211,14 @@ footer {
     <a href="#kits">Kits</a>
     <a href="#contato">Contato</a>
   </nav>
-</header><section class="hero">
+</header>
+
+<section class="hero">
   <h1>Kits Criativos com Luz e Magia</h1>
   <p>Surpreenda com lembranças únicas, feitas à mão e cheias de brilho.</p>
-</section><section class="kits" id="kits">
+</section>
+
+<section class="kits" id="kits">
   <div class="kit">
     <img src="https://i.ibb.co/5hP82yrs/78ef8122-30cb-4690-9de3-4208ec5cd908.jpg" alt="Kit Terror">
     <h3>Kit Horror com Luminária</h3>
@@ -134,14 +230,42 @@ footer {
     <p>Boneca com LED, caixa delicada e magia garantida.</p>
   </div>
   <div class="kit">
-    <img src="https://i.ibb.co/kgscC7X4/69af5ffe-73ae-4f3f-addc-747868d91362.jpg" alt="Kit pixel">
-    <h3>Kit PIXEL Luminado</h3>
+    <img src="https://i.ibb.co/kgscC7X4/69af5ffe-73ae-4f3f-addc-747868d91362.jpg" alt="Kit PIXEL">
+    <h3>Kit PIXEL Iluminado</h3>
     <p>Mini PIXEL com luz, cenário verde e caixa especial.</p>
   </div>
-</section><div style="text-align:center">
-  <a class="whatsapp-button" href="https://wa.me/5521977168153" target="_blank">Fazer Pedido no WhatsApp</a>
-</div><footer id="contato">
+  <div class="kit">
+    <img src="https://i.ibb.co/0yZCrH1n/0fb96bbe-90e6-457d-96fc-3063fd5cf865.jpg" alt="Kit Entregador">
+    <h3>Kit Entregador Bip Bip</h3>
+    <p>Mini moto com caixa personalizada e docinhos inclusos.</p>
+  </div>
+  <div class="kit">
+    <img src="https://i.ibb.co/Q3qcJKpj/36697ecc-ff24-44d9-9f8a-20a75ef5734d.jpg" alt="Kit Sereia">
+    <h3>Kit Sereia Encantada</h3>
+    <p>Caixa temática, efeitos de onda e uma mini sereia fofa.</p>
+  </div>
+  <div class="kit">
+    <img src="https://i.ibb.co/JRMmSrxN/55da63b1-5848-4550-90e5-d9694979c942.jpg" alt="Kit Dinossauro">
+    <h3>Kit Dino Aventura</h3>
+    <p>Caixa personalizada com mini dinossauros e vegetação divertida.</p>
+  </div>
+</section>
+
+<div class="social-section">
+  <div class="cta-text">⬇️ Faça seu pedido por aqui ⬇️</div>
+  <a href="https://wa.me/5521977168153" target="_blank" class="whatsapp-button">WhatsApp</a>
+  <a href="https://www.instagram.com/mimomakeroficial" target="_blank" class="instagram-button">Instagram</a>
+  <div class="cta-text">ou chame no <strong>Instagram</strong> direto na DM 💬</div>
+</div>
+
+<a class="floating-button" href="https://wa.me/5521977168153" target="_blank">
+  📦 Faça seu pedido via WhatsApp ou Instagram
+</a>
+
+<footer id="contato">
   <p>Contato direto: mimomaker@gmail.com | WhatsApp: (21) 99716-8153</p>
   <p>&copy; 2025 Mimo Maker. Feito com criatividade e muito carinho.</p>
-</footer></body>
+</footer>
+
+</body>
 </html>
